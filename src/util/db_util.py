@@ -9,11 +9,13 @@ from pymongo import MongoClient
 
 class connectDButil():
     def __init__(self,db_name = "shoppingsite"):
-        self.host='localhost', 
-        self.port=27017,
-        self.username = "A"
-        self.password = "b"
-        self.client = MongoClient()
+
+        self.client = MongoClient(        
+        host='test_mongodb',
+        port=27017,
+        username='root',
+        password='pass', 
+        authSource="admin")
         self.db_client = self.client[db_name]
 
 
