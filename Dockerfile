@@ -4,4 +4,4 @@ WORKDIR /app
 COPY . /app
 COPY requirement.txt .
 RUN pip install -r ./requirement.txt
-CMD ["python","./src/app.py"]
+CMD ["python","./srsc/app.py"]
