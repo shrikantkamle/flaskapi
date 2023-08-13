@@ -1,7 +1,7 @@
 FROM python:3-alpine3.18
 
-WORKDIR /app
-COPY . /app
+WORKDIR .
+COPY . .
 
 COPY requirement.txt .
 
