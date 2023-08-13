@@ -1,10 +1,10 @@
 FROM python:3-alpine3.18
 
-WORKDIR ./
-COPY . .
+WORKDIR . /app
+COPY . /app
 
-COPY requirement.txt .
+# COPY requirement.txt .
 
 RUN pip install -r requirement.txt
 EXPOSE 5000
-CMD ["python", "app.py"]
+CMD ["python", "/app/app.py"]
