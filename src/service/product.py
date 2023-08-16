@@ -15,8 +15,10 @@ class productinfo(ServiceBase):
         # item = list(self.collection.find({},{"_id": 0 }))
         print("ittttttttttttt",item)
         if item:
+            self.logger.info("fetching all the records.")
 
             return item,200
+        self.logger.error("No record exist !!!")
         return {"error": f"No record found"},404
 
 
@@ -27,6 +29,7 @@ class productinfo(ServiceBase):
         if item:
 
             return item,200
+        self.logger.error(f"No record exist with name {name}")
         return {"error": f"No record found for {name}"},404
 
 
