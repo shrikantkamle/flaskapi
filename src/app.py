@@ -17,4 +17,4 @@ def update_env():
     print("latest password is :",os.environ.get("my_password"))    
 
 if __name__ == "__main__":
-    app.run(host='0.0.0.0',DEBUG=True)
+    app.run(host='0.0.0.0',debug=True)
