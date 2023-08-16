@@ -27,23 +27,20 @@ def before_request_callback():
     print("before request----------")
     logger.info("before request----------")
     if my_password == 'nopassword':
+        import os
+        import subprocess
+
+        my_env = {**os.environ, 'PATH': '/usr/sbin:/sbin:' + os.environ['PATH']}
+
+        subprocess.Popen(["export"], env=my_env)
         logger.info("updating latest password")
         print("updating latest password")
-        result = os.system(f"export my_password={'HELLOWORLD'}")
+        # result = os.system(f"export my_password={'HELLOWORLD'}")
         # result = os.system(f"SETX /m my_password {'SHIRKANT'}")
-        logger.info(f"result---- {result}")
+        # logger.info(f"result---- {result}")
     new_password = os.environ.get("my_password")    
     logger.info(f"latest password is :")    
     logger.info(f"latest password is :{new_password}")    
-
-# @app.before_request
-# def update_env():
-#     print("before request----------")
-#     if my_password == 'nopassword':
-#         print("updating latest password")
-#         result = os.system(f"export my_password={'SHIRKANT'}")
-#         print("result----",result)
-#     print("latest password is :",os.environ.get("my_password"))    
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0')
