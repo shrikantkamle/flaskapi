@@ -10,7 +10,7 @@ jwt = JWTManager(app)
 app.config['PROPAGATE_EXCEPTIONS'] = True
 print("flask started..............",my_password)
 
-@app.before_request()
+@app.before_request
 def update_env():
     if my_password == 'nopassword':
         os.system(f"export my_password={'SHIRKANT'}")
