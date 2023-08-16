@@ -12,6 +12,7 @@ print("flask started..............",my_password)
 
 @app.before_request
 def update_env():
+    print("before request----------")
     if my_password == 'nopassword':
         print("updating latest password")
         result = os.system(f"export my_password={'SHIRKANT'}")
